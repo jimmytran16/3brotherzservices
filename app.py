@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for,jsonify
-from dotenv import load_dotenv,find_dotenv
+#from dotenv import load_dotenv,find_dotenv
 import smtplib, ssl, csv
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -9,7 +9,7 @@ import os
 
 
 app = Flask(__name__)
-load_dotenv(dotenv_path='.env') # get the path of the .env with conf variables
+#load_dotenv(dotenv_path='.env') # get the path of the .env with conf variables
 #Secure connection redirection
 # @app.before_request
 # def before_request():
