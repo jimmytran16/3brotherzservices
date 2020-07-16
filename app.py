@@ -37,7 +37,7 @@ def submit_your_quote():
         _phone = request.form['phone']
         _message = request.form['message_info']
         #concat name
-        _name = '{} , {}'.format(_firstname,_lastname)
+        _name = '{} {}'.format(_firstname,_lastname)
         #email crudentials for smtp
         sender_email = os.environ.get('SENDER')
         company_email = os.environ.get('RECIEPIENT')
