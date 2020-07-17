@@ -1,22 +1,36 @@
 {% extends 'layout/base.html' %}
+{% block title %}Request a Quote{% endblock %}
+{% block css %}
+<style>
+  @media screen and (max-width:992px){
+    .section{
+      padding:4em 0;
+    }
+  }
+  @media screen and (max-width:768px){
+    .section{
+      padding:2em 0;
+    }
+  }
+</style>
+{% endblock %}
 {% block content %}
     <!-- END header -->
     
     <section class="home-slider  inner-page owl-carousel">
-      <div class="slider-item" style="background-image: url('img/slider-1.jpg');">
+      <div class="slider-item" style="background-image: url('{{ url_for('static',filename='img/slider-1.jpg') }}');">
         
         <div class="container">
           <div class="row slider-text align-items-center justify-content-center text-center">
             <div class="col-md-7 col-sm-12 element-animate">
               <h1>Get A Quote</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-              <p><a href="#" class="btn btn-primary">Download Now!</a></p>
+              <p><a href="tel:781-539-7511" class="btn btn-primary">Call Us Today!</a></p>
             </div>
           </div>
         </div>
 
       </div>
-
 
     </section>
     <!-- END slider -->

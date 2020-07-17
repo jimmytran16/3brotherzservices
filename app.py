@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for,jsonify
-#from dotenv import load_dotenv,find_dotenv
+from dotenv import load_dotenv,find_dotenv
 import smtplib, ssl, csv
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -9,7 +9,7 @@ import os
 
 
 app = Flask(__name__)
-#load_dotenv(dotenv_path='.env') # get the path of the .env with conf variables
+load_dotenv(dotenv_path='.env') # get the path of the .env with conf variables
 #Secure connection redirection
 # @app.before_request
 # def before_request():
@@ -18,13 +18,51 @@ app = Flask(__name__)
 #         code = 301
 #         return redirect(url, code=code)
 
-@app.route('/') 
-def landing():
+@app.route('/')
+def landing_page():
     return render_template('main/index.html')
 
-@app.route('/get-your-quote/') #routing to get your quotes form 
+@app.route('/get-your-quote/') #routing to get your quotes form
 def get_your_quote():
     return render_template('main/get-quote.html')
+    
+
+@app.route('/services/') #route to go to Services
+def go_to_services():
+    return render_template("main/services.html")
+
+@app.route('/contact/') #route to go to contacts page
+def go_to_contacts():
+    return render_template("main/contact.html")
+
+@app.route('/aboutus/') #route to go to contacts page
+def go_to_about_us():
+    return render_template("main/about.html")
+
+@app.route('/our-works/') #route to go to contacts page
+def go_to_our_work():
+    return render_template("main/works.html")
+
+
+
+@app.route('/submit-contact-form/',methods=['POST'])
+def submit_contact_form():
+    if request.method == 'POST':
+        #get data from the form's field
+        _name = "{} {}".format(request.form['first_name'], request.form['last_name'])
+        _email = request.form['email']
+        _phone = request.form['phone']
+        _message = request.form['message']
+        sender_email = os.environ.get('SENDER')
+        company_email = os.environ.get('RECIEPIENT')
+        password = os.environ.get('PASSWORD')
+        try:
+            send_out_mail(sender_email,password,company_email,_name,_email,_phone,_message,version=2)
+        except Exception as error:
+            print(error);return render_template('main/contact.html',fail="Failed to send message! Please contact us by calling (781)-539-7511")
+        return render_template('main/contact.html',success="Successfully sent! We will get back to you soon!")
+    elif request.method == 'GET':
+        return jsonify({"Error":"GET method not allowed!"})
 
 @app.route('/submit-quote/',methods=['POST']) #get the data from the form and send out the email
 def submit_your_quote():
@@ -41,9 +79,9 @@ def submit_your_quote():
         #email crudentials for smtp
         sender_email = os.environ.get('SENDER')
         company_email = os.environ.get('RECIEPIENT')
-        password = os.environ.get('PASSWORD')  
-        try: #pass the clients crudentials into the func send_out_email()          
-            send_out_mail(sender_email,password,company_email,_name,_email,_phone,_message)
+        password = os.environ.get('PASSWORD')
+        try: #pass the clients crudentials into the func send_out_email()
+            send_out_mail(sender_email,password,company_email,_name,_email,_phone,_message,version=1)
             success = 'Successfully Sent!  We will give you a phone call!'
         except Exception as error:
             fail = 'Error sending the message!'
@@ -55,14 +93,18 @@ def submit_your_quote():
 
 
 
-def send_out_mail(sender_email,password,company_email,_name,_email,_phone,_message):
+def send_out_mail(sender_email,password,company_email,_name,_email,_phone,_message,version):
     sender_email = sender_email
     company_email = company_email
     password = password
-    today_date = (datetime.today() - timedelta(days=1)).strftime('%m-%d-%y')
-    subject_field = "QUOTE request {}".format(today_date)
+    today_date = datetime.today().strftime('%m-%d-%y')
+    #check for contact type (either quote or contact) --
+    if version == 1:
     #str that contains all of the body
-    body = "<br>{}<br>{}<br>{}<br>{}<br>".format(_name,_email,_phone,_message)
+        subject_field = "QUOTE REQUESTED {}".format(today_date)
+    else:
+        subject_field = "CONTACT FORM {}".format(today_date)
+    body = "<tr><td><p>Name:</p></td><td><p>{}</p></td></tr><tr><td><p>Email:</p></td><td><p>{}</p></td></tr><tr><td><p>Phone:</p></td><td><p>{}</p></td></tr><tr><td><p>Message:</p></td><td><p>{}</p></td></tr>".format(_name,_email,_phone,_message)    
     # body = _message
     print(body)
     # Create the plain-text and HTML version of your message
@@ -70,9 +112,9 @@ def send_out_mail(sender_email,password,company_email,_name,_email,_phone,_messa
     This is a test email!!
     """
     html = """\
-    Hello, we have request for quote:
+    <table>
     """+body+"""
-    """
+    </table>"""
 
     print(html)
 
