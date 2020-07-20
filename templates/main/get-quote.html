@@ -14,12 +14,37 @@
   }
 </style>
 {% endblock %}
+{% block nav %}
+<li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="/services/" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown04">
+    <a class="dropdown-item" href="/services/">Cleaning</a>
+    <a class="dropdown-item" href="/services/">Decking</a>
+    <a class="dropdown-item" href="/services/">Painting</a>
+  </div>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/our-works/">Works</a>
+</li>
+<!-- <li class="nav-item">
+      <a class="nav-link" href="news.html">News</a>
+    </li> -->
+<li class="nav-item">
+  <a class="nav-link" href="/aboutus/">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/contact/">Contact</a>
+</li>
+{% endblock %}
 {% block content %}
     <!-- END header -->
-    
+
     <section class="home-slider  inner-page owl-carousel">
       <div class="slider-item" style="background-image: url('{{ url_for('static',filename='img/slider-1.jpg') }}');">
-        
+
         <div class="container">
           <div class="row slider-text align-items-center justify-content-center text-center">
             <div class="col-md-7 col-sm-12 element-animate">
@@ -34,7 +59,7 @@
 
     </section>
     <!-- END slider -->
-    
+
     <section class="section">
       <div class="container">
         <div class="row">
@@ -100,7 +125,7 @@
               <p>Jane Doe, <a href="#">XYZ Inc.</a></p>
               <div class="media-body">
                 <blockquote>
-                  <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.&rdquo;</p>  
+                  <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.&rdquo;</p>
                 </blockquote>
 
               </div>
@@ -111,7 +136,7 @@
               <p>John Doe, <a href="#">XYZ Inc.</a></p>
               <div class="media-body">
                 <blockquote>
-                  <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.&rdquo;</p>  
+                  <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.&rdquo;</p>
                 </blockquote>
 
               </div>
@@ -121,5 +146,5 @@
         </div>
       </div>
     </section>
-    
+
 {% endblock %}

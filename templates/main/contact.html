@@ -14,10 +14,35 @@
   }
 </style>
 {% endblock %}
-{% block content %}    
+{% block nav %}
+<li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="/services/" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown04">
+    <a class="dropdown-item" href="/services/">Cleaning</a>
+    <a class="dropdown-item" href="/services/">Decking</a>
+    <a class="dropdown-item" href="/services/">Painting</a>
+  </div>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/our-works/">Works</a>
+</li>
+<!-- <li class="nav-item">
+      <a class="nav-link" href="news.html">News</a>
+    </li> -->
+<li class="nav-item">
+  <a class="nav-link" href="/aboutus/">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link active" href="/contact/">Contact</a>
+</li>
+{% endblock %}
+{% block content %}
     <section class="home-slider  inner-page owl-carousel">
       <div class="slider-item" style="background-image: url({{ url_for('static',filename='img/slider-1.jpg') }});">
-        
+
         <div class="container">
           <div class="row slider-text align-items-center justify-content-center text-center">
             <div class="col-md-7 col-sm-12 element-animate">
@@ -29,7 +54,7 @@
         </div>
       </div>
     </section>
-    <!-- END slider -->    
+    <!-- END slider -->
     <section class="section">
       <div class="container">
         <div class="row">
@@ -83,10 +108,10 @@
             <h5 class="text-uppercase mb-3">Address</h5>
             <!-- <p class="mb-5">98 West 21th Street, <br> Suite 721 <br> New York NY 10016</p> -->
             <p> To be determined.....</p>
-            
+
             <h5 class="text-uppercase mb-3">Email Us At</h5>
             <p class="mb-5"><a href="mailto:3brotherzservices@gmail.com">3brotherzservices@gmail.com</a></p>
-            
+
             <h5 class="text-uppercase mb-3">Call Us</h5>
             <p class="mb-5"> <a href="tel:781-539-7511">Phone: (781)-539-7511</a> </p>
           </div>

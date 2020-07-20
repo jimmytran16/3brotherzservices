@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for,jsonify
-#from dotenv import load_dotenv,find_dotenv
+# from dotenv import load_dotenv,find_dotenv
 from emailutil.sendemail import send_out_mail
 import os
 
 
 app = Flask(__name__)
-#load_dotenv(dotenv_path='.env') # get the path of the .env with conf variables
+# load_dotenv(dotenv_path='.env') # get the path of the .env with conf variables
 #Secure connection redirection
 # @app.before_request
 # def before_request():
@@ -21,7 +21,7 @@ def landing_page():
 @app.route('/get-your-quote/') #routing to get your quotes form
 def get_your_quote():
     return render_template('main/get-quote.html')
-    
+
 
 @app.route('/services/') #route to go to Services
 def go_to_services():
@@ -38,8 +38,6 @@ def go_to_about_us():
 @app.route('/our-works/') #route to go to contacts page
 def go_to_our_work():
     return render_template("main/works.html")
-
-
 
 @app.route('/submit-contact-form/',methods=['POST'])
 def submit_contact_form():

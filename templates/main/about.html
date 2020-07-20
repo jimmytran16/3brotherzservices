@@ -1,65 +1,85 @@
 {% extends 'layout/base.html' %}
 {% block title %}About Us{% endblock %}
+{% block nav %}
+<li class="nav-item">
+  <a class="nav-link" href="/">Home</a>
+</li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="/services/" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown04">
+    <a class="dropdown-item" href="/services/">Cleaning</a>
+    <a class="dropdown-item" href="/services/">Decking</a>
+    <a class="dropdown-item" href="/services/">Painting</a>
+  </div>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/our-works/">Works</a>
+</li>
+<!-- <li class="nav-item">
+      <a class="nav-link" href="news.html">News</a>
+    </li> -->
+<li class="nav-item">
+  <a class="nav-link active" href="/aboutus/">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/contact/">Contact</a>
+</li>
+{% endblock %}
 {% block content %}
-    <!-- END header -->
-    
-    <section class="home-slider  inner-page owl-carousel">
-      <div class="slider-item" style="background-image: url({{ url_for('static',filename='img/slider-1.jpg') }});">
-        
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center text-center">
-            <div class="col-md-7 col-sm-12 element-animate">
-              <h1>About Us</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-              <!-- <p><a href="#" class="btn btn-primary">Download Now!</a></p> -->
-            </div>
-          </div>
-        </div>
 
-      </div>
+<section class="home-slider  inner-page owl-carousel">
+  <div class="slider-item" style="background-image: url({{ url_for('static',filename='img/slider-1.jpg') }});">
 
-
-    </section>
-    <!-- END slider -->
-    
-    <section class="section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-6 order-lg-3 mb-5">
-            <img src="{{ url_for('static',filename='img/slider-1.jpg') }}" alt="Image placeholder" class="img-fluid">
-          </div>
-          <div class="col-md-1 order-lg-2"></div>
-          <div class="col-md-5 order-lg-1">
-            <h2 class="text-uppercase heading mb-4">Company History</h2>
-            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-
-            <ul class="list-unstyled check">
-              <li>Soluta sit quam minima</li>
-              <li>Consectetur adipisicing elit</li>
-              <li>Commodi unde impedit</li>
-            </ul>
-          </div>
-          
-        </div>
-        <div class="row">
-          <div class="col-md-6 order-lg-1 mb-5">
-            <img src="{{ url_for('static',filename='img/slider-2.jpg') }}" alt="Image placeholder" class="img-fluid">
-          </div>
-          <div class="col-md-1 order-lg-2"></div>
-          <div class="col-md-5 order-lg-3">
-            <h2 class="text-uppercase heading mb-4">We Are 25 Years in Industry</h2>
-            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-
-            <ul class="list-unstyled check">
-              <li>Soluta sit quam minima</li>
-              <li>Consectetur adipisicing elit</li>
-              <li>Commodi unde impedit</li>
-            </ul>
-          </div>
-          
+    <div class="container">
+      <div class="row slider-text align-items-center justify-content-center text-center">
+        <div class="col-md-7 col-sm-12 element-animate">
+          <h1>About Us</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+          <!-- <p><a href="#" class="btn btn-primary">Download Now!</a></p> -->
         </div>
       </div>
-    </section>
-    {% include 'includes/testomonial.html' %}
-  
-  {% endblock %}
+    </div>
+  </div>
+</section>
+<!-- END slider -->
+<section class="section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-6 order-lg-3 mb-5">
+        <img src="{{ url_for('static',filename='img/slider-1.jpg') }}" alt="Image placeholder" class="img-fluid">
+      </div>
+      <div class="col-md-1 order-lg-2"></div>
+      <div class="col-md-5 order-lg-1">
+        <h2 class="text-uppercase heading mb-4">Company History</h2>
+        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+
+        <ul class="list-unstyled check">
+          <li>Soluta sit quam minima</li>
+          <li>Consectetur adipisicing elit</li>
+          <li>Commodi unde impedit</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6 order-lg-1 mb-5">
+        <img src="{{ url_for('static',filename='img/slider-2.jpg') }}" alt="Image placeholder" class="img-fluid">
+      </div>
+      <div class="col-md-1 order-lg-2"></div>
+      <div class="col-md-5 order-lg-3">
+        <h2 class="text-uppercase heading mb-4">We Are 25 Years in Industry</h2>
+        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+
+        <ul class="list-unstyled check">
+          <li>Soluta sit quam minima</li>
+          <li>Consectetur adipisicing elit</li>
+          <li>Commodi unde impedit</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% include 'includes/testomonial.html' %}
+
+{% endblock %}
