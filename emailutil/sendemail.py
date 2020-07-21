@@ -5,7 +5,7 @@ from email.mime.multipart import MIMEMultipart
 import time
 from datetime import datetime, timedelta
 
-def send_out_mail(sender_email,password,company_email,_name,_email,_phone,_message,version):
+def send_out_mail(sender_email,password,company_email,_name,_email,_phone,_message,version,_location=""):
     sender_email = sender_email
     company_email = company_email
     password = password
@@ -14,9 +14,11 @@ def send_out_mail(sender_email,password,company_email,_name,_email,_phone,_messa
     if version == 1:
     #str that contains all of the body
         subject_field = "QUOTE REQUESTED {}".format(today_date)
+        body = "<tr><td><p>Name:</p></td><td><p>{}</p></td></tr><tr><td><p>Email:</p></td><td><p>{}</p></td></tr><tr><td><p>Phone:</p></td><td><p>{}</p></td></tr><tr><td><p>Location:</p></td><td><p>{}</p></td></tr><tr><td><p>Message:</p></td><td><p>{}</p></td></tr>".format(_name,_email,_phone,_location,_message)
     else:
         subject_field = "CONTACT FORM {}".format(today_date)
-    body = "<tr><td><p>Name:</p></td><td><p>{}</p></td></tr><tr><td><p>Email:</p></td><td><p>{}</p></td></tr><tr><td><p>Phone:</p></td><td><p>{}</p></td></tr><tr><td><p>Message:</p></td><td><p>{}</p></td></tr>".format(_name,_email,_phone,_message)    
+        body = "<tr><td><p>Name:</p></td><td><p>{}</p></td></tr><tr><td><p>Email:</p></td><td><p>{}</p></td></tr><tr><td><p>Phone:</p></td><td><p>{}</p></td></tr><tr><td><p>Message:</p></td><td><p>{}</p></td></tr>".format(_name,_email,_phone,_message)
+
     # body = _message
     print(body)
     # Create the plain-text and HTML version of your message
@@ -52,7 +54,7 @@ def send_out_mail(sender_email,password,company_email,_name,_email,_phone,_messa
             server.sendmail( #send the email
                 sender_email, company_email, message.as_string()
             )
-            # print(f'Success send email to {company_email}')
+            print(f'Success send email to {company_email}')
         except Exception as error:
             print(error)
-            # print(f'Fail to send email to {company_email}')
+            print(f'Fail to send email to {company_email}')

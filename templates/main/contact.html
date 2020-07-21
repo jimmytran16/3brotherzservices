@@ -2,16 +2,43 @@
 {% block title %}Contact Us{% endblock %}
 {% block css %}
 <style>
-  @media screen and (max-width:992px){
-    .section{
-      padding:4em 0;
+  @media screen and (max-width:992px) {
+    .section {
+      padding: 4em 0;
     }
   }
-  @media screen and (max-width:768px){
-    .section{
-      padding:2em 0;
+
+  @media screen and (max-width:768px) {
+    .section {
+      padding: 2em 0;
     }
   }
+
+  .form-caption {
+    padding-bottom: 10px;
+  }
+
+  input {
+    border-radius: 0 !important;
+    font-size: 0.90rem !important;
+  }
+
+  textarea {
+    border-radius: 0 !important;
+    font-size: 0.90rem !important;
+  }
+  .options-container{
+    text-align: center;
+  }
+  .option-btn{
+    border-radius: 0!important;
+    width:49%!important;
+    padding:5px;
+  }
+  .options-container{
+    margin-bottom: 40px;
+  }
+
 </style>
 {% endblock %}
 {% block nav %}
@@ -21,8 +48,8 @@
 <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="/services/" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
   <div class="dropdown-menu" aria-labelledby="dropdown04">
-    <a class="dropdown-item" href="/services/">Cleaning</a>
-    <a class="dropdown-item" href="/services/">Decking</a>
+    <a class="dropdown-item" href="/services/">Carpentry</a>
+    <a class="dropdown-item" href="/services/">Flooring</a>
     <a class="dropdown-item" href="/services/">Painting</a>
   </div>
 </li>
@@ -40,82 +67,162 @@
 </li>
 {% endblock %}
 {% block content %}
-    <section class="home-slider  inner-page owl-carousel">
-      <div class="slider-item" style="background-image: url({{ url_for('static',filename='img/slider-1.jpg') }});">
+<section class="home-slider  inner-page owl-carousel">
+  <div class="slider-item" style="background-image: url({{ url_for('static',filename='img/slider-1.jpg') }});">
 
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center text-center">
-            <div class="col-md-7 col-sm-12 element-animate">
-              <h1>Contact Us</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-              <p><a href="tel:781-539-7511" class="btn btn-primary">Call Us Today!</a></p>
-            </div>
-          </div>
+    <div class="container">
+      <div class="row slider-text align-items-center justify-content-center text-center">
+        <div class="col-md-7 col-sm-12 element-animate">
+          <h1>Contact Us</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+          <p><a href="tel:781-539-7511" class="btn btn-primary">Call Us Today!</a></p>
         </div>
       </div>
-    </section>
-    <!-- END slider -->
-    <section class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7">
-            <form action="/submit-contact-form/" method="POST">
-              {% if success %}
-              <div style="margin: 20px 0px;">
-                <span style="color:#83bb83; padding:10px 0px">{{ success }}</span>
-              </div>
-              {% endif %}
-              {% if fail %}
-              <div style="margin: 20px 0px;">
-                <span style="color:red; padding:10px 0px">{{ fail }}</span>
-              </div>
-              {% endif %}
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <label for="fname">First Name</label>
-                  <input type="text" class="form-control form-control-lg" name="first_name" id="fname" required>
-                </div>
-                <div class="col-md-6 form-group">
-                  <label for="lname">Last Name</label>
-                  <input type="text" name="last_name" class="form-control form-control-lg" id="lname" required>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" class="form-control form-control-lg" required>
-                </div>
-                <div class="col-md-6 form-group">
-                  <label for="email">Phone</label>
-                  <input type="text" id="email" name="phone" class="form-control form-control-lg" required>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 form-group">
-                  <label for="message">Write Message</label>
-                  <textarea name="message" id="message" class="form-control form-control-lg" cols="30" rows="8" required></textarea>
-                </div>
-              </div>
-              <div class="row">
+    </div>
+  </div>
+</section>
+<!-- END slider -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="options-container">
+          <!-- <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="submit" value="Send Message" class="btn btn-primary btn-lg btn-block">
                 </div>
-              </div>
-            </form>
-          </div>
-          <div class="col-md-1"></div>
-          <div class="col-md-4">
-            <h5 class="text-uppercase mb-3">Address</h5>
-            <!-- <p class="mb-5">98 West 21th Street, <br> Suite 721 <br> New York NY 10016</p> -->
-            <p> To be determined.....</p>
-
-            <h5 class="text-uppercase mb-3">Email Us At</h5>
-            <p class="mb-5"><a href="mailto:3brotherzservices@gmail.com">3brotherzservices@gmail.com</a></p>
-
-            <h5 class="text-uppercase mb-3">Call Us</h5>
-            <p class="mb-5"> <a href="tel:781-539-7511">Phone: (781)-539-7511</a> </p>
-          </div>
+                <div class="col-md-6 form-group">
+                  <input type="submit" value="Send Message" class="btn btn-primary btn-lg btn-block">
+                </div>
+              </div> -->
+          <!-- <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary">Left</button>
+            <button type="button" class="btn btn-secondary">Right</button>
+          </div> -->
+          <button id="contact-btn" onclick="showContactForm();" class="option-btn btn btn-primary" type="button" name="button">Contact</button>
+          <button id="quote-btn" onclick="showQuoteForm();" class="option-btn btn btn-primary" type="button" name="button">Request for Quote</button>
         </div>
+        <form id="contact-form" action="/submit-contact-form/" method="POST">
+          <h2 class="form-caption">Leave a message or question</h2>
+          {% if success %}
+          <div style="margin: 20px 0px;">
+            <span style="font-size: 14px;color:#83bb83; padding:10px 0px">{{ success }}</span>
+          </div>
+          {% endif %}
+          {% if fail %}
+          <div style="margin: 20px 0px;">
+            <span style="font-size: 14px;color:red; padding:10px 0px">{{ fail }}</span>
+          </div>
+          {% endif %}
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input placeholder="First name" type="text" class="form-control form-control-lg" name="first_name" id="fname" required>
+            </div>
+            <div class="col-md-6 form-group">
+              <input placeholder="Last name" type="text" name="last_name" class="form-control form-control-lg" id="lname" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="email" id="email" name="email" placeholder="E-mail*" class="form-control form-control-lg" required>
+            </div>
+            <div class="col-md-6 form-group">
+              <input type="text" id="email" placeholder="Phone" name="phone" class="form-control form-control-lg" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <textarea placeholder="Message*" name="message" id="message" class="form-control form-control-lg" cols="30" rows="8" required></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="submit" value="Send Message" class="btn btn-primary btn-lg btn-block">
+            </div>
+          </div>
+        </form>
+
+        <form id="quote-form" action="/submit-quote/" method="POST">
+          <h2 class="form-caption">Request A Quote!</h2>
+          {% if success %}
+          <div style="margin: 20px 0px;">
+            <span style="font-size: 14px;color:#83bb83; padding:10px 0px">{{ success }}</span>
+          </div>
+          {% endif %}
+          {% if fail %}
+          <div style="margin: 20px 0px;">
+            <span style="font-size: 14px;color:red; padding:10px 0px">{{ fail }}</span>
+          </div>
+          {% endif %}
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input placeholder="First name" type="text" class="form-control form-control-lg" name="first_name" id="fname" required>
+            </div>
+            <div class="col-md-6 form-group">
+              <input placeholder="Last name" type="text" name="last_name" class="form-control form-control-lg" id="lname" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="email" id="email" name="email" placeholder="E-mail*" class="form-control form-control-lg" required>
+            </div>
+            <div class="col-md-6 form-group">
+              <input type="text" id="email" placeholder="Phone" name="phone" class="form-control form-control-lg" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <input type="text" placeholder="City, State" name="city_state" class="form-control form-control-lg" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <textarea placeholder="Project Details*" name="message" id="message" class="form-control form-control-lg" cols="30" rows="8" required></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="submit" value="Submit Request" class="btn btn-primary btn-lg btn-block">
+            </div>
+          </div>
+        </form>
       </div>
-    </section>
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+        <h5 class="text-uppercase mb-3">Address</h5>
+        <!-- <p class="mb-5">98 West 21th Street, <br> Suite 721 <br> New York NY 10016</p> -->
+        <p> To be determined.....</p>
+
+        <h5 class="text-uppercase mb-3">Email Us At</h5>
+        <p class="mb-5"><a href="mailto:3brotherzservices@gmail.com">3brotherzservices@gmail.com</a></p>
+
+        <h5 class="text-uppercase mb-3">Call Us</h5>
+        <p class="mb-5"> <a href="tel:781-539-7511">Phone: (781)-539-7511</a> </p>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+
+  var quote_form = document.getElementById('quote-form');
+  var contact_form = document.getElementById('contact-form');
+  var contact_btn = document.getElementById('contact-btn');
+  var quote_btn = document.getElementById('quote-btn');
+  quote_form.hidden = true; //hide the quotes form first
+  contact_btn.style.backgroundColor = '#a27405';
+
+  function showQuoteForm() { //function to show quote form
+    quote_form.hidden = false;
+    contact_form.hidden = true;
+    contact_btn.style.backgroundColor = '#f4b214';
+    quote_btn.style.backgroundColor = '#a27405'
+  }
+
+  function showContactForm() { //function to show contact form
+    quote_form.hidden = true;
+    contact_form.hidden = false;
+    contact_btn.style.backgroundColor = '#a27405';
+    quote_btn.style.backgroundColor = '#f4b214'
+  }
+</script>
 {% endblock %}
