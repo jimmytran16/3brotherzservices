@@ -26,80 +26,187 @@
 </li>
 {% endblock %}
 {% block content %}
-
-    <section class="home-slider  inner-page owl-carousel">
-      <div class="slider-item" style="background-image: url({{ url_for('static',filename='img/slider-1.jpg') }});">
-
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center text-center">
-            <div class="col-md-7 col-sm-12 element-animate">
-              <h1>Our Works in 25 Years</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-              <!-- <p><a href="#" class="btn btn-primary">Download Now!</a></p> -->
-            </div>
-          </div>
+<section class="home-slider  inner-page owl-carousel">
+  <div class="slider-item" style="background-image: url({{ url_for('static',filename='img/slider-1.jpg') }});">
+    <div class="container">
+      <div class="row slider-text align-items-center justify-content-center text-center">
+        <div class="col-md-7 col-sm-12 element-animate">
+          <h1>Our Works in 25 Years</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+          <!-- <p><a href="#" class="btn btn-primary">Download Now!</a></p> -->
         </div>
-
-      </div>
-
-
-    </section>
-    <!-- END slider -->
-
-    <section class="section">
-      <div class="container">
-        <div class="row no-gutters">
-          <div class="col-md-4 element-animate">
-            <a href="works-single.html" class="link-thumbnail">
-              <h3>Wood Polishing</h3>
-              <span class="ion-plus icon"></span>
-              <img src="{{ url_for ('static',filename='img/work_thumb_1.jpg') }}" alt="Image placeholder" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="works-single.html" class="link-thumbnail">
-              <h3>General Construction Building</h3>
-              <span class="ion-plus icon"></span>
-              <img src="{{ url_for ('static',filename='img/work_thumb_2.jpg') }}" alt="Image placeholder" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="works-single.html" class="link-thumbnail">
-              <h3>House Renovation</h3>
-              <span class="ion-plus icon"></span>
-              <img src="{{ url_for ('static',filename='img/work_thumb_3.jpg') }}" alt="Image placeholder" class="img-fluid">
-            </a>
-          </div>
-
-          <div class="col-md-4 element-animate">
-            <a href="works-single.html" class="link-thumbnail">
-              <h3>Wood Polishing</h3>
-              <span class="ion-plus icon"></span>
-              <img src="{{ url_for ('static',filename='img/work_thumb_1.jpg') }}" alt="Image placeholder" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="works-single.html" class="link-thumbnail">
-              <h3>General Construction Building</h3>
-              <span class="ion-plus icon"></span>
-              <img src="{{ url_for ('static',filename='img/work_thumb_2.jpg') }}" alt="Image placeholder" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="works-single.html" class="link-thumbnail">
-              <h3>House Renovation</h3>
-              <span class="ion-plus icon"></span>
-              <img src="{{ url_for ('static',filename='img/work_thumb_3.jpg') }}" alt="Image placeholder" class="img-fluid">
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <div class="row justify-content-center mb-5 element-animate">
-      <div class="col-md-8 text-center mb-5">
-        <h2 class="text-uppercase heading border-bottom mb-4">Our Reviews</h2>
-        <p class="mb-0 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
       </div>
     </div>
+  </div>
+</section>
+<!-- END slider -->
+
+
+
+<section class="section">
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-md-4 element-animate">
+        <a onclick="showModal('image1');" id="myImg" class="link-thumbnail">
+          <h3>Vinyl Flooring</h3>
+          <span class="ion-plus icon"></span>
+          <img id="image1" src="{{ url_for ('static',filename='img/floor1.jpg') }}" alt="Vinyl Flooring" class="img-fluid">
+        </a>
+      </div>
+      <div class="col-md-4 element-animate">
+        <a onclick="showModal('image2');" class="link-thumbnail">
+          <h3>Carpet Flooring</h3>
+          <span class="ion-plus icon"></span>
+          <img id="image2" src="{{ url_for ('static',filename='img/floor2.jpg') }}" alt="Carpet Flooring" class="img-fluid">
+        </a>
+      </div>
+      <div class="col-md-4 element-animate">
+        <a onclick="showModal('image3');" class="link-thumbnail">
+          <h3>Stone flooring</h3>
+          <span class="ion-plus icon"></span>
+          <img id="image3" src="{{ url_for ('static',filename='img/floor3.jpg') }}" alt="Stone flooring" class="img-fluid">
+        </a>
+      </div>
+
+      <div class="col-md-4 element-animate">
+        <a onclick="showModal('image4');" class="link-thumbnail">
+          <h3>Interior Painting</h3>
+          <span class="ion-plus icon"></span>
+          <img id="image4" src="{{ url_for ('static',filename='img/paint1.jpg') }}" alt="Interior Painting" class="img-fluid">
+        </a>
+      </div>
+      <div class="col-md-4 element-animate">
+        <a onclick="showModal('image5');" class="link-thumbnail">
+          <h3>Exterior Painting</h3>
+          <span class="ion-plus icon"></span>
+          <img id="image5" src="{{ url_for ('static',filename='img/paint2.jpg') }}" alt="Exterior Painting" class="img-fluid">
+        </a>
+      </div>
+      <div class="col-md-4 element-animate">
+        <a onclick="showModal('image6');" class="link-thumbnail">
+          <h3>Exterior Painting</h3>
+          <span class="ion-plus icon"></span>
+          <img id="image6" src="{{ url_for ('static',filename='img/paint3.jpg') }}" alt="Exterior Painting" class="img-fluid">
+        </a>
+      </div>
+  </div>
+  </div>
+</section>
+
+<style media="screen">
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: unset; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+      width: 90%;
+  }
+}
+</style>
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <img alt="" class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script type="text/javascript">
+
+  //modal obj and image placeholder
+  var modal = document.getElementById('myModal');
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+
+  //function to show the modal, passing in the image id
+  function showModal(imageId){
+    var the_image = document.getElementById(imageId);
+    modal.style.display = "block";
+    modalImg.src = the_image.src;
+    modalImg.alt = the_image.alt;
+    captionText.innerHTML = modalImg.alt;
+  }
+
+  var span = document.getElementsByClassName("close")[0];
+
+  span.onclick = function() { //to exit out of the modal view
+      modal.style.display = "none";
+  }
+</script>
+<div class="container">
+  <div class="row justify-content-center mb-5 element-animate">
+    <div class="col-md-8 text-center mb-5">
+      <h2 class="text-uppercase heading border-bottom mb-4">Our Reviews</h2>
+      <p class="mb-0 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+    </div>
+  </div>
+</div>
+
 {% endblock %}

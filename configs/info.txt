@@ -1,3 +1,0 @@
-dev env - testing
-email -  3brotherztesting@gmail.com
-heroku acc - email , C6.

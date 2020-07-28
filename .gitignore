@@ -1,3 +1,5 @@
 open.bat
 test.html
 .env
+configs
+__pycache__
