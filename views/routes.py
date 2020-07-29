@@ -14,6 +14,7 @@ import os
 #         return redirect(url, code=code)
 
 @app.route('/')
+@app.route('/home/')
 def landing_page():
     return render_template('main/index.html')
 
