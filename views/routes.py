@@ -34,6 +34,10 @@ def go_to_contacts():
 def go_to_about_us():
     return render_template("main/about.html")
 
+@app.route('/more-work/') #route to go to contacts page
+def go_to_more_works():
+    return render_template("main/moreworks.html")
+
 @app.route('/our-works/') #route to go to contacts page
 def go_to_our_work():
     return render_template("main/works.html")

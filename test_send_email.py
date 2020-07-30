@@ -1,7 +1,7 @@
 import unittest
 from app import app
 
-class TestEmailSends(unittest.TestCase):
+class TestEmailSends(unittest.TestCase): #test email sending functionality // Make sure all contact/quote forms are being sent successfully
 
     def setUp(self):
         self.app = app.test_client()

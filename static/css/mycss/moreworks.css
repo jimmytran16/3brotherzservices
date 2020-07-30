@@ -1,0 +1,17 @@
+.options-container{
+  text-align: center;
+}
+.option-btn{
+  border-radius: 0!important;
+  width:28%!important;
+  padding:5px;
+}
+#all-btn{
+  width: 10%!important;
+}
+.col-md-4 img{
+  width: 320px;
+}
+.options-container{
+  margin-bottom: 40px;
+}
