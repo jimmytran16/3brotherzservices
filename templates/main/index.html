@@ -8,7 +8,7 @@
   }
   .owl-carousel .owl-item img {
     filter: brightness(1.05);
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
 </style>
 {% endblock %}
@@ -27,9 +27,6 @@
 <li class="nav-item">
   <a class="nav-link" href="/our-works/">Works</a>
 </li>
-<!-- <li class="nav-item">
-      <a class="nav-link" href="news.html">News</a>
-    </li> -->
 <li class="nav-item">
   <a class="nav-link" href="/aboutus/">About</a>
 </li>
@@ -46,10 +43,10 @@
       <div class="row slider-text align-items-center justify-content-center text-center">
         <div class="col-md-7 col-sm-12 element-animate">
           <div class="container">
-            <img src="{{ url_for('static',filename='img/4.png') }}" alt="">
+            <img src="{{ url_for('static',filename='img/headerlogo.png') }}" alt="">
           </div>
           <!-- <h1>Creating A Brighter Future</h1> -->
-          <p>Making your vision come true, that is what we do.</p>
+          <p>We Treat You Like Family</p>
           <p><a href="tel:781-539-7511" class="btn btn-primary">Call Us Now For A Quote</a></p>
         </div>
       </div>
@@ -87,40 +84,37 @@
     <div class="row justify-content-center mb-5 element-animate">
       <div class="col-md-8 text-center">
         <h2 class="text-uppercase heading border-bottom mb-4">Services</h2>
-        <p class="mb-3 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+        <p class="mb-3 lead">Blending quality, craftsmanship, and customer care. Your satisfaction is our guarantee.</p>
       </div>
     </div>
 
     <div class="row mb-5">
       <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
         <div class="media d-block media-feature text-center">
-          <span class="flaticon-blueprint icon"></span>
+          <span class="flaticon-helmet icon"></span>
           <div class="media-body">
             <h3 class="mt-0 text-black">Carpentry</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>
+            <p>Crafting your desire</p>
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
         <div class="media d-block media-feature text-center">
-          <span class="flaticon-building-1 icon"></span>
+          <span class="flaticon-floor icon"></span>
           <div class="media-body">
             <h3 class="mt-0 text-black">Flooring</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>
+            <p>Taking your flooring to the next level</p>
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
         <div class="media d-block media-feature text-center">
-          <span class="flaticon-crane icon"></span>
+          <span class="flaticon-paint icon"></span>
           <div class="media-body">
             <h3 class="mt-0 text-black">Painting</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <p><a href="#" class="btn btn-outline-primary btn-sm">Learn More</a></p>
+            <p>Transform your home with new colors.</p>
           </div>
         </div>
       </div>
@@ -141,29 +135,29 @@
     <div class="row justify-content-center mb-5 element-animate">
       <div class="col-md-8 text-center">
         <h2 class="text-uppercase heading border-bottom mb-4">Recent Works</h2>
-        <p class="mb-3 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-        <p><a href="/our-works/" class="btn btn-primary">View All Works</a></p>
+        <p class="mb-3 lead">Take a look at all of our recent projects</p>
+        <p><a href="/our-works/" class="btn btn-primary">View Projects</a></p>
       </div>
     </div>
 
     <div class="row no-gutters">
       <div class="col-md-4 element-animate">
-        <a href="works-single.html" class="link-thumbnail">
-          <h3>Wood Polishing</h3>
+        <a href="/our-works/" class="link-thumbnail">
+          <h3>Flooring</h3>
           <span class="ion-plus icon"></span>
-          <img src="{{ url_for('static',filename='img/work_thumb_1.jpg') }}" alt="Image placeholder" class="img-fluid">
+          <img src="{{ url_for('static',filename='img/floor/floor1.jpg') }}" alt="Image placeholder" class="img-fluid">
         </a>
       </div>
       <div class="col-md-4 element-animate">
-        <a href="works-single.html" class="link-thumbnail">
-          <h3>General Construction Building</h3>
+        <a href="/our-works/" class="link-thumbnail">
+          <h3>Painting</h3>
           <span class="ion-plus icon"></span>
-          <img src="{{ url_for('static',filename='img/work_thumb_2.jpg') }}" alt="Image placeholder" class="img-fluid">
+          <img src="{{ url_for('static',filename='img/painting/paint1.jpg') }}" alt="Image placeholder" class="img-fluid">
         </a>
       </div>
       <div class="col-md-4 element-animate">
-        <a href="works-single.html" class="link-thumbnail">
-          <h3>House Renovation</h3>
+        <a href="/our-works/" class="link-thumbnail">
+          <h3>Carpentry</h3>
           <span class="ion-plus icon"></span>
           <img src="{{ url_for('static',filename='img/work_thumb_3.jpg') }}" alt="Image placeholder" class="img-fluid">
         </a>
