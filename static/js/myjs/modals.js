@@ -3,6 +3,7 @@
 var modal = document.getElementById('myModal');
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
+var navbar = document.getElementById('the-header');
 
 //function to show the modal, passing in the image id
 function showModal(imageId){
@@ -11,10 +12,12 @@ function showModal(imageId){
   modalImg.src = the_image.src;
   modalImg.alt = the_image.alt;
   captionText.innerHTML = modalImg.alt;
+  navbar.style.display="none";
 }
 
 var span = document.getElementsByClassName("close")[0];
 
 span.onclick = function() { //to exit out of the modal view
     modal.style.display = "none";
+    navbar.style.display = '';
 }
