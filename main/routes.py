@@ -1,10 +1,10 @@
-from app import app
+from main import app
 from flask import render_template, request, redirect, url_for,jsonify
 # from dotenv import load_dotenv,find_dotenv
-from emailutil.sendemail import send_out_mail
+from main.emailutil.sendemail import send_out_mail
 import os
 
-# load_dotenv(dotenv_path='../.env') # get the path of the .env with conf variables
+# load_dotenv(load_dotenv()) # get the path of the .env with conf variables
 #Secure connection redirection
 # @app.before_request
 # def before_request():
@@ -53,6 +53,7 @@ def submit_contact_form():
         sender_email = os.environ.get('SENDER')
         company_email = os.environ.get('RECIEPIENT')
         password = os.environ.get('PASSWORD')
+        print('LOG {} {} {} '.format(sender_email,company_email,password))
         try:
             send_out_mail(sender_email,password,company_email,_name,_email,_phone,_message,version=2)
         except Exception as error:
