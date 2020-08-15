@@ -1,5 +1,5 @@
 import unittest
-from app import app
+from main import app
 
 class RouteTests(unittest.TestCase): # test ran for routes // Make sure all requests have successful response
 
